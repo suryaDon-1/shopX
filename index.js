@@ -2,6 +2,7 @@ import express from "express";
 import errorMiddleware from "./api/Middeware/error.middeware.js";
 import authRouter from "./api/Routes/auth.routes.js";
 import cookieParser from "cookie-parser";
+import productRouter from "./api/Routes/product.route.js";
 //import express from express to use to use express to create api send req,res 
 const app = express();
 
@@ -11,6 +12,8 @@ app.use(cookieParser());// this put cookie into req.cookies
 
 //routes
 app.use("/api/auth", authRouter)
+//product route 
+app.use("/api/product",productRouter);
 //custom middeware 
 app.use(errorMiddleware) // handels the errors show them 
 //create an app just for test 

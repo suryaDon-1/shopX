@@ -3,7 +3,7 @@ import Auth from "../Models/auth.model.js";
 export const registerUserservice = async (data) => {
   // the data send from the controller in this case data = req.body
   //step 1 => extract /destructure all the fields from req.body bsz data came in json fromat from frontend
-  const { username, email, password } = data;
+  const { username, email, password ,role} = data;
   // add business logic here /validation here
   if (!username || !email || !password) {
     const error = new Error("Username ,email ,password must required");
@@ -23,6 +23,7 @@ export const registerUserservice = async (data) => {
     username,
     email,
     password,
+    role,
   });
   return creteUser // return crete user to use in controller 
 };
