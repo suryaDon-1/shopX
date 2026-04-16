@@ -25,7 +25,8 @@ const productSchema = new mongoose.Schema({
     images:[
         // images are multiple so store in array
         {
-            type: String,
+            url:String,
+            id:String,
             // sttring type besz we store url from the cloudrnary 
         }
     ],

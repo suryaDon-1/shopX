@@ -15,8 +15,8 @@ import { genToken } from "../Utils/genToken.js";
 
 export const loginUser = asyncHandler(async(req,res,next)=>{
       //extract id from req.user if user is logged in 
-  const id = req.user.id
-    const login = await authServices.loginUserservice(req.body,id); //send the login credentials to the loginservics get from user 
+ // const id = req.user.id
+    const login = await authServices.loginUserservice(req.body); //send the login credentials to the loginservics get from user 
     //if evet=ything goes well then user will be logged in 
     // and => final step genrate the token
    const token = await genToken(login);
